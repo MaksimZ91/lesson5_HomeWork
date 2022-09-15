@@ -127,14 +127,14 @@ Console.WriteLine("Сдвинутый массив: [ " + string.Join(", ", shif
 
 int[] shift (int[] array, int K)
 {
-    int[] arr = new int[array.Length];                  //// буферный массив
-    if ( K < 0)                                        ////проверка сдвига положит/отриц сдвиг
+    int[] arr = new int[array.Length];                  
+    if ( K < 0)                                        
     {
-      K = -K;                                          //// инвертиурем если отрицательный
-      if (K > array.Length)                            //// Если указан сдивг больше длинны массива,
-        K -= ( K / array.Length ) * array.Length;      //// приаводим значаения сдвига к вхождению в длинну массива
-        K =  array.Length - K;                         ////задаем направление сдвига влево ( отрицательный сдвиг)
-        transforArray(array, arr, K);                  ////двигаем массив
+      K = -K;                                         
+      if (K > array.Length)                            
+        K -= ( K / array.Length ) * array.Length;      
+        K =  array.Length - K;                         
+        transforArray(array, arr, K);                  
     }
     else
     {
@@ -149,9 +149,9 @@ int[] shift (int[] array, int K)
 void transforArray (int[] array, int[] arr, int K)
 {
   for(int i = 0; i < K; i++)                 
-    arr[i] = array[array.Length - K + i ];  ////перекидываем элементы из текущего массива  в новый массив  начиная с элемента под индексом K-1 заканчивая полсдения элементом текущего массива
+    arr[i] = array[array.Length - K + i ];  
   for(int j = K; j <= arr.Length-1; j++)
-    arr[j] = array[j-K];                 ////заполняем оставшиеся ячейки нового массива от элемента под индексом К до конца массива .
+    arr[j] = array[j-K];                 
 }
 
 
